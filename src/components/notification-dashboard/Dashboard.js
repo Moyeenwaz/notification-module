@@ -15,6 +15,7 @@ import {
   Empty,
   A,
 } from "./Dashboard.styled";
+import { Entry } from "./Entry";
 
 export const Dashboard = () => {
   return (
@@ -48,8 +49,11 @@ export const Dashboard = () => {
           <NotificationDetails>Date</NotificationDetails>
           <NotificationDetails>Action</NotificationDetails>
         </NotificationDetailsContainer>
-        <Entries></Entries>
+        <Entries>
+          <Entry />
+        </Entries>
         <Empty>No data</Empty>
+        {/* Empty should only be displayed when there is no entry */}
       </TabbedContainer>
     </>
   );

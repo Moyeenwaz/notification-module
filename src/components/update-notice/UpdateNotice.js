@@ -9,8 +9,12 @@ import {
   TitleContainer,
   InputSmall,
   DurationContainer,
+  CheckboxContainer,
+  Checkbox,
+  ButtonContainer,
 } from "./UpdateNotice.styled.";
-
+import { Button } from "./Button.styled";
+import { Wysiwyg } from "../Wysiwyg";
 //Using a dropdown library
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
@@ -50,6 +54,7 @@ export const UpdateNotice = () => {
             components={makeAnimated()}
             onChange={setSelectedOption}
             options={updateType}
+            autoFocus
             placeholder="Select an Update Type"
           />
         </InputContainer>
@@ -67,7 +72,6 @@ export const UpdateNotice = () => {
             onChange={setSelectedOption}
             options={updateSeverity}
             placeholder="Select an Update Type"
-            autoFocus
           />
         </InputContainer>
 
@@ -96,6 +100,32 @@ export const UpdateNotice = () => {
             </InputContainer>
           </DurationContainer>
         </TitleContainer>
+        <TitleContainer>
+          <Title>Message</Title>
+          <Label>Strip</Label>
+          <Wysiwyg />
+
+          <CheckboxContainer>
+            <Checkbox type="checkbox" />
+            <Label>Show Strip</Label>
+          </CheckboxContainer>
+
+          <Label>Modal</Label>
+          <Wysiwyg />
+
+          <CheckboxContainer>
+            <Checkbox type="checkbox" />
+            <Label>Show Modal</Label>
+          </CheckboxContainer>
+          <CheckboxContainer>
+            <Checkbox type="checkbox" />
+            <Label>Send notice as email</Label>
+          </CheckboxContainer>
+        </TitleContainer>
+        <ButtonContainer>
+          <Button>Cancel</Button>
+          <Button filled={true}>Save</Button>
+        </ButtonContainer>
       </GeneralContainer>
     </>
   );

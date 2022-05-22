@@ -78,6 +78,7 @@ export const Sort = styled.div`
   font-weight: 400;
   font-size: 24px;
   line-height: 29px;
+  cursor: pointer;
 `;
 
 export const TabbedContainer = styled.div`
@@ -95,8 +96,8 @@ export const TabHeader = styled.ul`
   border-radius: 5px 5px 0 0;
   height: 71px;
   margin: 0;
-  list-style: none;
   display: flex;
+  list-style: none;
   align-items: center;
 `;
 
@@ -111,15 +112,15 @@ export const Tabs = styled.li`
   margin-right: 150px;
 `;
 
-export const NotificationDetailsContainer = styled.ul`
-  list-style: none;
+export const NotificationDetailsContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 90%;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0 auto;
 `;
 
-export const NotificationDetails = styled.li`
+export const NotificationDetails = styled.p`
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;

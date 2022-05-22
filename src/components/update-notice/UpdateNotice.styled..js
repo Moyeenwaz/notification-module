@@ -70,3 +70,17 @@ export const DurationContainer = styled.div`
   justify-content: space-around;
   align-items: center;
 `;
+
+export const CheckboxContainer = styled.div`
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`;
+
+export const Checkbox = styled.input``;
+export const ButtonContainer = styled.div`
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+`;

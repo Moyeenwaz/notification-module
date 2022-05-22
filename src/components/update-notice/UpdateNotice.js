@@ -13,6 +13,7 @@ import {
   Checkbox,
   ButtonContainer,
 } from "./UpdateNotice.styled.";
+import { A } from "../notification-dashboard/Dashboard.styled";
 import { Button } from "./Button.styled";
 import { Wysiwyg } from "../Wysiwyg";
 //Using a dropdown library
@@ -123,7 +124,9 @@ export const UpdateNotice = () => {
           </CheckboxContainer>
         </TitleContainer>
         <ButtonContainer>
-          <Button>Cancel</Button>
+          <A to="/">
+            <Button>Cancel</Button>
+          </A>
           <Button filled={true}>Save</Button>
         </ButtonContainer>
       </GeneralContainer>

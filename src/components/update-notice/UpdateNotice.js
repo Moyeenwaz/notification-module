@@ -41,9 +41,19 @@ const updateFeaturesAffected = [
 ];
 
 export const UpdateNotice = () => {
-  // I meant to implement a functionality here but i failed. I left the code and commented it out
-  const [selectedOption, setSelectedOption] = useState({});
-  // const checkSelectedOption = () => selectedOption.value === "maintenance";
+  const [isMaintenanceNotice, setIsMaintenanceNotice] = useState(false);
+  const [isSeveritySelected, setIsSeveritySelected] = useState(false);
+
+  const setSelectedOption = selectedOption => {};
+
+  const setSelectedCategory = selectedCategory => {
+    if (selectedCategory.value === "maintenance") setIsMaintenanceNotice(true);
+    else setIsMaintenanceNotice(false);
+  };
+
+  const setSelectedSeverity = () => {
+    setIsSeveritySelected(true);
+  };
 
   return (
     <>
@@ -53,41 +63,44 @@ export const UpdateNotice = () => {
           <Label>Category</Label>
           <Select
             components={makeAnimated()}
-            onChange={setSelectedOption}
+            onChange={setSelectedCategory}
             options={updateType}
             autoFocus
             placeholder="Select an Update Type"
           />
         </InputContainer>
-        <InputContainer>
-          <Label>Title</Label>
-          <Input type="text" placeholder="Title.." />
-        </InputContainer>
-        {/* {selectedOption.value === "maintenance" && (
-        )} */}
-        <InputContainer>
-          {" "}
-          <Label>Severity</Label>
-          <Select
-            components={makeAnimated()}
-            onChange={setSelectedOption}
-            options={updateSeverity}
-            placeholder="Select an Update Type"
-          />
-        </InputContainer>
 
         <InputContainer>
-          {" "}
-          <Label>Features Affected</Label>
-          <Select
-            components={makeAnimated()}
-            onChange={setSelectedOption}
-            options={updateFeaturesAffected}
-            placeholder="Select Affected Features"
-            isSearchable
-            isMulti
-          />
+          <Label>Notification Title</Label>
+          <Input type="text" placeholder="Title.." />
         </InputContainer>
+
+        {isMaintenanceNotice && (
+          <InputContainer>
+            <Label>Severity</Label>
+            <Select
+              components={makeAnimated()}
+              onChange={setSelectedSeverity}
+              options={updateSeverity}
+              placeholder="Select an Update Type"
+            />
+          </InputContainer>
+        )}
+
+        {isSeveritySelected && (
+          <InputContainer>
+            <Label>Select Affected Features</Label>
+            <Select
+              components={makeAnimated()}
+              onChange={setSelectedOption}
+              options={updateFeaturesAffected}
+              placeholder="Select Affected Features"
+              isSearchable
+              isMulti
+            />
+          </InputContainer>
+        )}
+
         <TitleContainer>
           <Title>Duration</Title>
           <DurationContainer>

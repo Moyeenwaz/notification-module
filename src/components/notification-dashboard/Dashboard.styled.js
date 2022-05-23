@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const BtnContainer = styled.div`
   width: 90%;
@@ -18,7 +18,7 @@ export const AddButton = styled.button`
   align-items: center;
   background: #61a60f;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   justify-content: center;
   border: none;
@@ -59,7 +59,7 @@ export const Search = styled.input`
 
   ::placeholder {
     margin-left: 10px;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: italic;
     font-weight: 400;
     font-size: 24px;
@@ -72,7 +72,7 @@ export const Sort = styled.div`
   display: flex;
   align-items: center;
   margin-left: 30px;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -87,7 +87,7 @@ export const TabbedContainer = styled.div`
   width: 90%;
   position: relative;
   margin: 70px auto 0;
-  min-height: 330px;
+  min-height: ${({ notEmpty }) => (notEmpty ? "1000px" : "330px")};
 `;
 export const TabHeader = styled.ul`
   background: #ffffff;
@@ -120,7 +120,7 @@ export const NotificationDetailsContainer = styled.div`
 `;
 
 export const NotificationDetails = styled.p`
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -137,7 +137,7 @@ export const Empty = styled.p`
   height: 29px;
   left: 570px;
   top: 218px;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;

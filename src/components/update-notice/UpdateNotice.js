@@ -19,6 +19,7 @@ import { Wysiwyg } from "../Wysiwyg";
 //Using a dropdown library
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
+import { SavedMessage } from "./SavedMessage";
 
 //Dropdown Options
 const updateType = [
@@ -43,10 +44,11 @@ const updateFeaturesAffected = [
 export const UpdateNotice = () => {
   const [isMaintenanceNotice, setIsMaintenanceNotice] = useState(false);
   const [isSeveritySelected, setIsSeveritySelected] = useState(false);
+  const [saved, setSaved] = useState(false);
 
-  const setSelectedOption = selectedOption => {};
+  const setSelectedOption = (selectedOption) => {};
 
-  const setSelectedCategory = selectedCategory => {
+  const setSelectedCategory = (selectedCategory) => {
     if (selectedCategory.value === "maintenance") setIsMaintenanceNotice(true);
     else setIsMaintenanceNotice(false);
   };
@@ -55,9 +57,14 @@ export const UpdateNotice = () => {
     setIsSeveritySelected(true);
   };
 
+  const handleSave = () => {
+    setSaved(true);
+  };
+
   return (
     <>
       <Header>Update Notice</Header>
+      {saved && <SavedMessage />}
       <GeneralContainer>
         <InputContainer>
           <Label>Category</Label>
@@ -140,7 +147,9 @@ export const UpdateNotice = () => {
           <A to="/">
             <Button>Cancel</Button>
           </A>
-          <Button filled={true}>Save</Button>
+          <Button filled={true} onClick={handleSave}>
+            Save
+          </Button>
         </ButtonContainer>
       </GeneralContainer>
     </>

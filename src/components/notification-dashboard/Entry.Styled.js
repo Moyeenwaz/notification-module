@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const EntryContainer = styled.div`
   width: 95%;
-  margin: 0 auto;
+  margin: 12px auto;
   /* height: 99px; */
   padding: 10px 0;
   background: #ffffff;
